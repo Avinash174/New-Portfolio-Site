@@ -15,8 +15,8 @@ export const data = {
   ],
 
   stats: [
-    { num: 10, suffix: "+", label: "Companies" },
-    { num: 50, suffix: "+", label: "Projects" },
+    { num: "10", suffix: "+", label: "Companies" },
+    { num: "50", suffix: "+", label: "Projects" },
     { num: "8.56", suffix: "", label: "CGPA" },
   ],
 
