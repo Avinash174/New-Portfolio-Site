@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme Variables */
+:root {
+  --bg-color: #F8FAFC;
+  --surface-color: #FFFFFF;
+  --surface-card-color: #FFFFFF;
+  --surface-secondary-color: #F1F5F9;
+  --surface-hover-color: #F1F5F9;
+  
+  --text-primary-color: #0F172A;
+  --text-muted-color: #475569;
+  --text-dim-color: #64748B;
+  
+  --border-subtle: #E2E8F0;
+  --border-hover: #CBD5E1;
+  
+  --teal-primary: #0F766E;
+  --teal-hover: #115E59;
+  --teal-secondary: #0D9488;
+  --teal-glow: rgba(15, 118, 110, 0.08);
+  --teal-border: rgba(15, 118, 110, 0.2);
+  
+  --accent-blue: #2563EB;
+  --accent-violet: #7C3AED;
+  --accent-green: #16A34A;
+  --accent-amber: #D97706;
+  --accent-pink: #DB2777;
+
+  --tech-symbol-opacity: 0.05;
+  --grid-line-color: rgba(15, 23, 42, 0.04);
+}
+
+/* Dark Theme Variables */
+.dark {
+  --bg-color: #050608;
+  --surface-color: #0B0F12;
+  --surface-card-color: #10161A;
+  --surface-secondary-color: #0E1418;
+  --surface-hover-color: #162026;
+  
+  --text-primary-color: #F8FAFC;
+  --text-muted-color: #94A3B8;
+  --text-dim-color: #64748B;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  
+  --teal-primary: #14B8A6;
+  --teal-secondary: #2DD4BF;
+  --teal-glow: rgba(20, 184, 166, 0.15);
+  --teal-border: rgba(20, 184, 166, 0.25);
+  
+  --accent-blue: #3B82F6;
+  --accent-violet: #8B5CF6;
+  --accent-green: #22C55E;
+  --accent-amber: #F59E0B;
+  --accent-pink: #EC4899;
+
+  --tech-symbol-opacity: 0.12;
+  --grid-line-color: rgba(255, 255, 255, 0.03);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transitions for surfaces, cards, and borders during theme toggling */
+main, section, article, nav, header, footer, div.backdrop-blur-xl, div.backdrop-blur-md, div.rounded-3xl, div.rounded-2xl {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom modern scrollbar adapting to active theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--teal-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-secondary);
+}
+
+/* Reduced motion media query */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
